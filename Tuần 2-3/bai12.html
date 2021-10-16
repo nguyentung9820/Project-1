@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <script>
+            function handle(h, a) {
+                let string = "";
+                if( h > 10 || h < 2){
+                    document.getElementById("fail").innerHTML  = h + " Không thỏa mãn. Nhập lại";    
+                }else{
+                    if( a == 1){
+                        for (let i = h; i > 0; i--) {
+                            // printing star
+                            for (let k = h - i; k >= 0; k--) {
+                                string += "*";
+                            }
+                            string += "<br>";
+                        }
+                        document.getElementById("result").innerHTML  = string;    
+                    }else{
+                        for (let i = 0; i < h; i++) {
+                            // printing star
+                            for (let k = 0; k < h - i; k++) {
+                                string += "*";
+                            }
+                            string += "<br>";
+                        }
+                        document.getElementById("result").innerHTML  = string;    
+                    }
+                }
+            }
+          </script>
+    </head>
+    <body>
+        <h1>Vẽ tam giác</h1>
+
+        <span>Chiều cao: </span> <input type="number" name="h" id="h"/><br><br>
+        <span>Chiều tam giác: </span>
+        <select name="a" id="a">
+            <option value="1">Xuôi</option>
+            <option value="0">Ngược</option>
+        </select> <br><br>       
+        <button onclick="handle(document.getElementById('h').value, document.getElementById('a').value)">Thực hiện</button><br><br>
+        <div id='fail'></div><br><br><div id='result'></div>
+    </body>
+</html>
