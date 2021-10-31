@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <title>Bai 13</title>
+    </head>
+    <body>
+        <script>
+           function matrix(n) {
+  const results = [];
+for (let i = 0; i < n; i++) {
+    results.push([]);
+  }
+let counter = 1;
+  let startColumn = 0;
+  let endColumn = n - 1;
+  let startRow = 0;
+  let endRow = n - 1;
+  while (startColumn <= endColumn && startRow <= endRow) {
+    // Top row
+    for (let i = startColumn; i <= endColumn; i++) {
+      results[startRow][i] = counter;
+      counter++;
+    }
+    startRow++;
+// Right column
+    for (let i = startRow; i <= endRow; i++) {
+      results[i][endColumn] = counter;
+      counter++;
+    }
+    endColumn--;
+// Bottom row
+    for (let i = endColumn; i >= startColumn; i--) {
+      results[endRow][i] = counter;
+      counter++;
+    }
+    endRow--;
+// start column
+    for (let i = endRow; i >= startRow; i--) {
+      results[i][startColumn] = counter;
+      counter++;
+    }
+    startColumn++;
+  }
+return results;
+}
+            function handle(number) {
+                if(number > 8 || number < 3){
+                    console.log('not correct');    
+                }else{
+                    // console.log(matrix(number))
+                    console.log(matrix(number))
+                }
+            }
+        </script>
+            <div>NguyenSontung-20183854</div>
+            <label for='number'>Nhap kich thuoc o vuong</label>
+            <input type='number' name='number' id='number'/>
+            <br>
+            <button onclick="handle(document.getElementById('number').value)" >Submit</button>
+            <br>
+            <br>
+            <div id='fail'>Ket qua</div>
+            <div id='ok'></div>
+
+    </body>
+</html>
