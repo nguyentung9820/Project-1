@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <script>
+            function handle(){
+                result = [];
+                function fibonacci(n) {
+                return n < 1 ? 1
+                        : n <= 2 ? 2
+                        : fibonacci(n - 1) + fibonacci(n - 2)
+                }
+
+                result.push(fibonacci(7))
+                document.getElementById("result").innerHTML  = result;    
+            } 
+                     
+          </script>
+    </head>
+    <body>
+        <h1>In ra so fibonaci thu N (vi du la 7)</h1>
+        <br><br>       
+        <button onclick="handle()">Thực hiện</button><br><br>
+        <div id='result'></div>
+    </body>
+</html>

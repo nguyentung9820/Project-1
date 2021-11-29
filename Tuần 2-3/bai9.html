@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <script>
+            function primeFactors(n) {
+                const factors = [];
+                let divisor = 2;
+
+                while (n >= 2) {
+                    if (n % divisor == 0) {
+                    factors.push(divisor);
+                    n = n / divisor;
+                    } else {
+                    divisor++;
+                    }
+                }
+                return factors;
+            }
+            function handle(){
+                n = 70
+                result = [];
+                result.push('Tích các số nguyên tố của '+ n + ': ' + primeFactors(n).join(' '))
+                document.getElementById("result").innerHTML  = result;    
+            }     
+          </script>
+    </head>
+    <body>
+        <h1>In ra khai trien cua 1 so tu nhien (vi du 70)</h1>
+        <br><br>       
+        <button onclick="handle()">Thực hiện</button><br><br>
+        <div id='result'></div>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <script>
+            function prime_factors(num) {
+                function is_prime(num) {
+                    for (let i = 2; i <= Math.sqrt(num); i++)
+                    {
+                    if (num % i === 0) return false;
+                    }
+                    return true;
+                }
+                const result = [];
+                for (let i = 2; i <= num; i++)
+                {
+                    while (is_prime(i) && num % i === 0) 
+                    {
+                    if (!result.includes(i)) result.push(i);
+                    num /= i;
+                    }
+                }
+                return result;
+            }
+            function handle(){
+                result = [];
+                result.push(prime_factors(100))
+                document.getElementById("result").innerHTML  = result;    
+            }
+        </script>
+    </head>
+    <body>
+        <h1>In ra uoc so nguyen to  (vi du cua 1000)</h1>
+        <br><br>       
+        <button onclick="handle()">Thực hiện</button><br><br>
+        <div id='result'></div>
+    </body>
+</html>

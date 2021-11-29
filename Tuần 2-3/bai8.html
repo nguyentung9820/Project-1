@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <script>
+            function findNumber(n){
+                    if (n % 2 == 0){
+                        document.getElementById("result").innerHTML = 2;
+                    }else {
+                        for (var i = 3; i * i <= n; i += 2) {
+                        if (n % i == 0){
+                            document.getElementById("result").innerHTML = i;
+                            }
+                        }
+                    }     
+                }           
+          </script>
+    </head>
+    <body>
+        <h1>Tim ra uoc so nguyen nho nhat cua N</h1>
+        <br><br>
+        <span>Nhap vao N: </span> <input type="number" name="h" id="h"/><br><br>       
+        <button onclick="findNumber(document.getElementById('h').value)">Thực hiện</button><br><br>
+        <div id='result'></div>
+    </body>
+</html>

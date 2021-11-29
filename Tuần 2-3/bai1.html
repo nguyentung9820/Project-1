@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <script>
+            function handle(N){
+                result = [];
+                for (var counter = 0; counter <= 100; counter++) {
+                    var notPrime = false;
+                    for (var i = 2; i <= counter; i++) {
+                        if (counter%i===0 && i!==counter) {
+                            notPrime = true;
+                        }
+                    }
+                    if (notPrime === true) {
+                            result.push(counter);
+                    }
+                }  
+                document.getElementById("result").innerHTML  = result;    
+            } 
+                     
+          </script>
+    </head>
+    <body>
+        <h1>In ra man hinh ca hop so nho hon 100</h1>
+        <br><br>       
+        <button onclick="handle()">Thực hiện</button><br><br>
+        <div id='result'></div>
+    </body>
+</html>

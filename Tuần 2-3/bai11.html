@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <script>
+            function shuffle(array) {
+                let currentIndex = array.length,  randomIndex;
+                while (currentIndex != 0) {
+                    randomIndex = Math.floor(Math.random() * currentIndex);
+                    currentIndex--;
+                    [array[currentIndex], array[randomIndex]] = [
+                    array[randomIndex], array[currentIndex]];
+                }
+
+                return array;
+            }
+            function handle(){
+                result = [];
+                var tmp = '12345';
+
+                var result = tmp.split('');
+                shuffle(result);
+
+                result.push('Số khi được tráo đổi: ' + result.join('').toString());                
+                document.getElementById("result").innerHTML  = result;    
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Viet chuong trinh doi cho day so tu nhien (vi du cua 12345)</h1>
+        <br><br>       
+        <button onclick="handle()">Thực hiện</button><br><br>
+        <div id='result'></div>
+    </body>
+</html>

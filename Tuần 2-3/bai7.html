@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <script>
+            function handle(){
+                var check0 = 0;
+                var check1 = 0;
+                var check2 = 0;
+                var check3 = 0;
+                result1 = [];
+                result2 = [];
+                result3 = [];
+                result4 = [];
+
+                for(var i = 0; i <=100; i++){
+                    var result = i%5;
+                    switch(result) {
+                    case 0:
+                        check0++;
+                        break;
+                    case 1:
+                        check1++;
+                        break;
+                    case 2:
+                        check2++;
+                        break;
+                    case 3:
+                        check3++;
+                        break;
+                    }
+                }
+                result1.push('Số các số chia 5 dư 0: ' + check0);
+                result2.push('Số các số chia 5 dư 1: ' + check1);
+                result3.push('Số các số chia 5 dư 2: ' + check2);
+                result4.push('Số các số chia 5 dư 3: ' + check3);
+                document.getElementById("result1").innerHTML  = result1;
+                document.getElementById("result2").innerHTML  = result2;    
+                document.getElementById("result3").innerHTML  = result3;    
+                document.getElementById("result4").innerHTML  = result4;    
+    
+            } 
+                     
+          </script>
+    </head>
+    <body>
+        <h1>Dem cac so tu nhien chia het cho 5 du 0,1,2,3 nho hon hoac bang 100</h1>
+        <br><br>       
+        <button onclick="handle()">Thực hiện</button><br><br>
+        <div id='result1'></div>
+        <div id='result2'></div>
+        <div id='result3'></div>
+        <div id='result4'></div>
+
+    </body>
+</html>

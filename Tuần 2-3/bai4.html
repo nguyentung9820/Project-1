@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <script>
+            function handle(){
+                result = [];
+                for (var counter = 0; counter < 100; counter++) {
+                    if (counter % 7 === 0 || counter % 3 === 0 ) {
+                                result.push(counter);
+                    }
+                }
+                document.getElementById("result").innerHTML  = result;    
+            } 
+                     
+          </script>
+    </head>
+    <body>
+        <h1>In ra man hinh cac so nho hon 100 chia het 3 va 7</h1>
+        <br><br>       
+        <button onclick="handle()">Thực hiện</button><br><br>
+        <div id='result'></div>
+    </body>
+</html>
